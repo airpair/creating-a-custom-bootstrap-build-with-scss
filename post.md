@@ -1,12 +1,24 @@
-Have you ever tried to customize the font size for your [Bootstrap][]-powered website?
+## Who is this for?
 
-It's not something you can easily do without recompiling Bootstrap's CSS. If you change the font size on your page, you'll want that change to cascade through.  A change in the base font size should recalculate header font sizes and margins/padding for text elements like paragraph tags.
+Customizing [Bootstrap][] can be hard if done incorrectly.  Sometimes you can simply include more CSS rules after loading Bootstrap, but it's often not that easy.
 
-Let's look at how to create a custom [Bootstrap SASS][] build without maintaining our own fork of Bootstrap.
+If you have ever struggled to customize the overall look-and-feel of a Bootstrap-powered website, this tutorial is for you.
 
-## Using Bootstrap with Bower
+## Customizing Bootstrap font size and colors
 
-We're going to use `bower` and `gulp` to compile Bootstrap, so we'll need [Node.js][].
+Customizing fonts and colors is particularly difficult with Bootstrap.  If you change the base font size on your page, you'll also want to change header font sizes and margins for text elements like paragraph tags.
+
+Fundamentally changing Bootstrap is not easy without recompiling Bootstrap's CSS.
+
+What do I mean by recompiling?  Well, Bootstrap is built using a CSS preprocessor.  There are dozens of variables that control Bootstrap appearance.  A change in one of these variables can propagate throughout our website, affecting many different styles as appropriate.
+
+The official version of Bootstrap is maintained using the [LESS][] CSS preprocessor, but we're going to use the [Sass][] version due to Sass's popularity.
+
+## Build Bootstrap with Sass, Gulp, and Bower
+
+We're going to use [Bower][] and [Gulp][] to compile Bootstrap, so we'll need [Node.js][].
+
+#### Create a Node.js project
 
 First let's make a `package.json` file for Node to see.  Either use `npm init -y` or create a `package.json` file containing just an empty JSON object (`{}`).
 
@@ -28,7 +40,9 @@ Our `package.json` file should now look something like this:
 }
 ```
 
-Now let's use Bower to install bootstrap.  This will allow us to import Bootstrap into our SCSS code and compile it down to CSS manually.
+#### Install Bootstrap for Sass with Bower
+
+Now let's use Bower to install Bootstrap.  This will allow us to import Bootstrap into our SCSS code and compile it down to CSS manually.
 
 Create a `bower.json` file using `bower init` or by manually creating one:
 
@@ -51,7 +65,7 @@ Create a `bower.json` file using `bower init` or by manually creating one:
 }
 ```
 
-Now let's install `bootstrap-sass` with Bower.
+Now let's install [`bootstrap-sass`][bootstrap sass] with Bower.
 
 ```bash
 $ bower install --save bootstrap-sass
@@ -72,8 +86,9 @@ Now we can make an SCSS file that includes bootstrap into our project.  Let's ca
 @import "bootstrap/theme";
 ```
 
+#### Compile Bootstrap for Sass with Gulp
 
-Now let's use gulp to compile our `app.scss` which includes Bootstrap SASS:
+Now let's use gulp to compile our `app.scss` which includes Bootstrap SASS.  Create a `gulpfile.js` file which contains:
 
 ```js
 var gulp = require('gulp');
@@ -100,7 +115,9 @@ gulp.task('fonts', function() {
 gulp.task('default', ['css', 'fonts']);
 ```
 
-Now when we run `gulp`, our compiled Bootstrap CSS should appear in the `public/css` directory:
+In the file above, we have made three gulp tasks.  The *css* task reads `css/app.scss`, compiles it into CSS, and stores that CSS in `public/css`.  The *fonts* task copies the Bootstrap fonts to `public/fonts`.  The *default* task executes both the *css* and *fonts* tasks.
+
+Now when we run `gulp`, the *default* task will execute and our compiled Bootstrap CSS should appear in the `public/css` directory:
 
 ```bash
 $ gulp
@@ -108,11 +125,15 @@ $ ls public/css
 app.css
 ```
 
-## Customizing the font size
+## Customizing Bootstrap's font size
 
 Now let's look at how we can go about customizing the font size in Bootstrap.
 
-Notice that the value of the `$font-size-base` variable in the [`_variables.scss` file][variables.scss] is used for calculating a variety of other important variables.  For example 8 of the lines below rely on `$font-size-base`:
+#### Locating Bootstrap's customizable variables
+
+If we take a peak inside [Bootstrap Sass][], we can see that dozens of customizable variables are listed in the [`bootstrap/_variables.scss` file][variables.scss].  To change the font size, we'll want to customize the `$font-size-base` variable.
+
+The value of the `$font-size-base` variable in is used for calculating a variety of other important variables in the same file.  For example 8 of the lines below rely on `$font-size-base`:
 
 ```scss
 $font-size-base:          14px !default;
@@ -129,7 +150,9 @@ $font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
 
 Notice those `!default` flags?  That `!default` flag means the variables will be set *only* if they don't have a value already.
 
-All of the variables assigned in [Bootstrap SASS's][bootstrap sass] `_variables.scss` file have a `!default` flag.  That means we can override those variables by assigning our own values before we import Bootstrap.
+All of the variables assigned in this `_variables.scss` file have a `!default` flag.  That means we can override any of these variables by assigning our own values before we import Bootstrap.
+
+#### Overriding Bootstrap default variables
 
 Let's copy Bootstrap's `_variables.scss` file and make our own custom version:
 
@@ -145,7 +168,7 @@ Now we need to reference our custom variables module from our `app.scss` file.
 @import "bootstrap/theme";
 ```
 
-Remember to import our `variables` module *before* we import Bootstrap!  If we import it afterward, our changes customizations won't be applied.
+Remember to import our `variables` module **before we import Bootstrap**!  If we import it afterward, our changes won't be applied.
 
 Now let's change `$font-size-base` to `16px` in `css/_variables.scss`:
 
@@ -159,19 +182,20 @@ Now if we recompile our CSS we should see our larger font size reflected through
 $ gulp
 ```
 
-## Try it out!
+## Go forth and customize Bootstrap!
 
-I made a sample project to demonstrate how easy it is to customize Bootstrap variables before building [Bootstrap SASS][].
-
-[Check out the sample project on Github](https://github.com/treyhunner/custom-bootstrap-example)
-
-Know about a different way to customize Bootstrap?  Did I make a mistake in my explanation?  Leave a comment and let me know.
+Now you have the power to customize Boostrap for your own website.  If you're looking for an example, check out [this sample project I made](https://github.com/treyhunner/custom-bootstrap-example) that shows how to customize Bootstrap variables.  If you need help figuring out what a variable does, you can always search for it in the [Bootstrap Sass code][] to see where it's used.
 
 ---
 
-This article is also available on [Trey Hunner's blog](http://treyhunner.com/2015/02/creating-a-custom-bootstrap-build/).
+This article was originally published on [Trey Hunner's blog](http://treyhunner.com/2015/02/creating-a-custom-bootstrap-build/).
 
 [bootstrap]: http://getbootstrap.com/
+[bower]: http://bower.io/
 [bootstrap sass]: https://github.com/twbs/bootstrap-sass
+[bootstrap sass code]: https://github.com/twbs/bootstrap-sass/tree/master/assets/stylesheets/bootstrap
+[gulp]: http://gulpjs.com/
 [variables.scss]: https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss#L52
+[less]: http://lesscss.org/
 [node.js]: http://nodejs.org/
+[sass]: http://sass-lang.com/
