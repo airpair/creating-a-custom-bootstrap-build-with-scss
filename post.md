@@ -90,7 +90,7 @@ Now we can make an SCSS file that includes bootstrap into our project.  Let's ca
 
 Now let's use gulp to compile our `app.scss` which includes Bootstrap SASS.  Create a `gulpfile.js` file which contains:
 
-```js
+```javascript
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 
