@@ -6,15 +6,15 @@ If you have ever struggled to customize the overall look-and-feel of a Bootstrap
 
 ## Customizing Bootstrap font size and colors
 
-Customizing fonts and colors is particularly difficult with Bootstrap.  If you change the base font size on your page, you'll also want to change header font sizes and margins/padding for text elements like paragraph tags.
+Customizing fonts and colors is particularly difficult with Bootstrap.  If you change the base font size on your page, you'll also want to change header font sizes and margins for text elements like paragraph tags.
 
-Fundamentally changing Bootstrap is not something you can easily do without recompiling Bootstrap's CSS.
+Fundamentally changing Bootstrap is not easy without recompiling Bootstrap's CSS.
 
 What do I mean by recompiling?  Well, Bootstrap is built using a CSS preprocessor.  There are dozens of variables that control Bootstrap appearance.  A change in one of these variables can propagate throughout our website, affecting many different styles as appropriate.
 
 The official version of Bootstrap is maintained using the [LESS][] CSS preprocessor, but we're going to use the [Sass][] version due to Sass's popularity.
 
-## Using Bootstrap with Bower
+## Build Bootstrap with Sass, Gulp, and Bower
 
 We're going to use `bower` and `gulp` to compile Bootstrap, so we'll need [Node.js][].
 
@@ -184,4 +184,6 @@ This article is also available on [Trey Hunner's blog](http://treyhunner.com/201
 [bootstrap]: http://getbootstrap.com/
 [`bootstrap-sass`]: https://github.com/twbs/bootstrap-sass
 [variables.scss]: https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss#L52
+[less]: http://lesscss.org/
 [node.js]: http://nodejs.org/
+[sass]: http://sass-lang.com/
