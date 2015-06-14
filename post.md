@@ -188,7 +188,7 @@ Now you have the power to customize Boostrap for your own website.  If you're lo
 
 ---
 
-This article is also available on [Trey Hunner's blog](http://treyhunner.com/2015/02/creating-a-custom-bootstrap-build/).
+This article was originally published on [Trey Hunner's blog](http://treyhunner.com/2015/02/creating-a-custom-bootstrap-build/).
 
 [bootstrap]: http://getbootstrap.com/
 [bower]: http://bower.io/
