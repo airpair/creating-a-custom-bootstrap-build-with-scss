@@ -1,8 +1,16 @@
-Have you ever tried to customize the font size for your [Bootstrap][]-powered website?
+## Who is this for?
 
-It's not something you can easily do without recompiling Bootstrap's CSS. If you change the font size on your page, you'll want that change to cascade through.  A change in the base font size should recalculate header font sizes and margins/padding for text elements like paragraph tags.
+If you have ever struggled to customize the overall look-and-feel of a [Bootstrap][]-powered website, this tutorial is for you.
 
-Let's look at how to create a custom [Bootstrap SASS][] build without maintaining our own fork of Bootstrap.
+## Customizing Bootstrap font size and colors
+
+In many cases, you cannot easily customize Bootstrap's overall appearance by simply appending CSS rules after loading your `bootstrap.css` file.  For example, if you change the base font size on your page, you'll also want to change header font sizes and margins/padding for text elements like paragraph tags.
+
+Fundamentally changing Bootstrap is not something you can easily do without recompiling Bootstrap's CSS.
+
+What do I mean by recompiling?  Well, Bootstrap is built using a CSS preprocessor.  There are dozens of variables that control Bootstrap appearance.  A change in one of these variables can propagate throughout our website, affecting many different styles as appropriate.
+
+The official version of Bootstrap is maintained using the [LESS][] CSS preprocessor, but we're going to use the [Sass][] version due to Sass's popularity.
 
 ## Using Bootstrap with Bower
 
@@ -51,7 +59,7 @@ Create a `bower.json` file using `bower init` or by manually creating one:
 }
 ```
 
-Now let's install `bootstrap-sass` with Bower.
+Now let's install [`bootstrap-sass`][] with Bower.
 
 ```bash
 $ bower install --save bootstrap-sass
@@ -172,6 +180,6 @@ Know about a different way to customize Bootstrap?  Did I make a mistake in my e
 This article is also available on [Trey Hunner's blog](http://treyhunner.com/2015/02/creating-a-custom-bootstrap-build/).
 
 [bootstrap]: http://getbootstrap.com/
-[bootstrap sass]: https://github.com/twbs/bootstrap-sass
+[`bootstrap-sass`]: https://github.com/twbs/bootstrap-sass
 [variables.scss]: https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss#L52
 [node.js]: http://nodejs.org/
