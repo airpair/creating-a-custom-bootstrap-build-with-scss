@@ -182,13 +182,9 @@ Now if we recompile our CSS we should see our larger font size reflected through
 $ gulp
 ```
 
-## Try it out!
+## Go forth and customize Bootstrap!
 
-I made a sample project to demonstrate how easy it is to customize Bootstrap variables before building [Bootstrap Sass][].
-
-[Check out the sample project on Github](https://github.com/treyhunner/custom-bootstrap-example)
-
-Know about a different way to customize Bootstrap?  Did I make a mistake in my explanation?  Leave a comment and let me know.
+Now you have the power to customize Boostrap for your own website.  If you're looking for an example, check out [this sample project I made](https://github.com/treyhunner/custom-bootstrap-example) that shows how to customize Bootstrap variables.  If you need help figuring out what a variable does, you can always search for it in the [Bootstrap Sass code][] to see where it's used.
 
 ---
 
@@ -197,6 +193,7 @@ This article is also available on [Trey Hunner's blog](http://treyhunner.com/201
 [bootstrap]: http://getbootstrap.com/
 [bower]: http://bower.io/
 [bootstrap sass]: https://github.com/twbs/bootstrap-sass
+[bootstrap sass code]: https://github.com/twbs/bootstrap-sass/tree/master/assets/stylesheets/bootstrap
 [gulp]: http://gulpjs.com/
 [variables.scss]: https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss#L52
 [less]: http://lesscss.org/
