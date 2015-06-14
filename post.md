@@ -115,9 +115,9 @@ gulp.task('fonts', function() {
 gulp.task('default', ['css', 'fonts']);
 ```
 
-In the file above, we have made three gulp tasks.  The `css` task reads our `css/app.scss` Sass file, compiles it into CSS, and stores the CSS in `public/css`.  The `fonts` task copies the Bootstrap fonts to `public/fonts`.  The `default` task executes both the `css` and `fonts` tasks.
+In the file above, we have made three gulp tasks.  The *css* task reads `css/app.scss`, compiles it into CSS, and stores that CSS in `public/css`.  The *fonts* task copies the Bootstrap fonts to `public/fonts`.  The *default* task executes both the *css* and *fonts* tasks.
 
-Now when we run `gulp`, the `default` task will execute and our compiled Bootstrap CSS should appear in the `public/css` directory:
+Now when we run `gulp`, the *default* task will execute and our compiled Bootstrap CSS should appear in the `public/css` directory:
 
 ```bash
 $ gulp
