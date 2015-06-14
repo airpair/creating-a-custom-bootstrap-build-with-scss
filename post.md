@@ -18,7 +18,7 @@ The official version of Bootstrap is maintained using the [LESS][] CSS preproces
 
 We're going to use [Bower][] and [Gulp][] to compile Bootstrap, so we'll need [Node.js][].
 
-### Create a Node.js project
+#### Create a Node.js project
 
 First let's make a `package.json` file for Node to see.  Either use `npm init -y` or create a `package.json` file containing just an empty JSON object (`{}`).
 
@@ -40,7 +40,7 @@ Our `package.json` file should now look something like this:
 }
 ```
 
-### Install Bootstrap for Sass with Bower
+#### Install Bootstrap for Sass with Bower
 
 Now let's use Bower to install Bootstrap.  This will allow us to import Bootstrap into our SCSS code and compile it down to CSS manually.
 
@@ -86,7 +86,7 @@ Now we can make an SCSS file that includes bootstrap into our project.  Let's ca
 @import "bootstrap/theme";
 ```
 
-### Compile Bootstrap for Sass with Gulp
+#### Compile Bootstrap for Sass with Gulp
 
 Now let's use gulp to compile our `app.scss` which includes Bootstrap SASS.  Create a `gulpfile.js` file which contains:
 
@@ -129,7 +129,7 @@ app.css
 
 Now let's look at how we can go about customizing the font size in Bootstrap.
 
-### Locating Bootstrap's customizable variables
+#### Locating Bootstrap's customizable variables
 
 If we take a peak inside [Bootstrap Sass][], we can see that dozens of customizable variables are listed in the [`bootstrap/_variables.scss` file][variables.scss].  To change the font size, we'll want to customize the `$font-size-base` variable.
 
@@ -152,7 +152,7 @@ Notice those `!default` flags?  That `!default` flag means the variables will be
 
 All of the variables assigned in this `_variables.scss` file have a `!default` flag.  That means we can override any of these variables by assigning our own values before we import Bootstrap.
 
-### Overriding Bootstrap default variables
+#### Overriding Bootstrap default variables
 
 Let's copy Bootstrap's `_variables.scss` file and make our own custom version:
 
