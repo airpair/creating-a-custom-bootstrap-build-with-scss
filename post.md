@@ -16,7 +16,9 @@ The official version of Bootstrap is maintained using the [LESS][] CSS preproces
 
 ## Build Bootstrap with Sass, Gulp, and Bower
 
-We're going to use `bower` and `gulp` to compile Bootstrap, so we'll need [Node.js][].
+We're going to use [Bower][] and [Gulp][] to compile Bootstrap, so we'll need [Node.js][].
+
+### Create a Node.js project
 
 First let's make a `package.json` file for Node to see.  Either use `npm init -y` or create a `package.json` file containing just an empty JSON object (`{}`).
 
@@ -37,6 +39,8 @@ Our `package.json` file should now look something like this:
   }
 }
 ```
+
+### Install Bootstrap for Sass
 
 Now let's use Bower to install bootstrap.  This will allow us to import Bootstrap into our SCSS code and compile it down to CSS manually.
 
@@ -82,6 +86,7 @@ Now we can make an SCSS file that includes bootstrap into our project.  Let's ca
 @import "bootstrap/theme";
 ```
 
+### Compile Bootstrap for Sass with Gulp
 
 Now let's use gulp to compile our `app.scss` which includes Bootstrap SASS:
 
@@ -182,7 +187,9 @@ Know about a different way to customize Bootstrap?  Did I make a mistake in my e
 This article is also available on [Trey Hunner's blog](http://treyhunner.com/2015/02/creating-a-custom-bootstrap-build/).
 
 [bootstrap]: http://getbootstrap.com/
+[bower]: http://bower.io/
 [`bootstrap-sass`]: https://github.com/twbs/bootstrap-sass
+[gulp]: http://gulpjs.com/
 [variables.scss]: https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss#L52
 [less]: http://lesscss.org/
 [node.js]: http://nodejs.org/
