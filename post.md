@@ -125,11 +125,15 @@ $ ls public/css
 app.css
 ```
 
-## Customizing the font size
+## Customizing Bootstrap's font size
 
 Now let's look at how we can go about customizing the font size in Bootstrap.
 
-Notice that the value of the `$font-size-base` variable in the [`_variables.scss` file][variables.scss] is used for calculating a variety of other important variables.  For example 8 of the lines below rely on `$font-size-base`:
+### Locating Bootstrap's customizable variables
+
+If we take a peak inside [Bootstrap Sass][], we can see that dozens of customizable variables are listed in the [`bootstrap/_variables.scss` file][variables.scss].  To change the font size, we'll want to customize the `$font-size-base` variable.
+
+The value of the `$font-size-base` variable in is used for calculating a variety of other important variables in the same file.  For example 8 of the lines below rely on `$font-size-base`:
 
 ```scss
 $font-size-base:          14px !default;
@@ -146,7 +150,9 @@ $font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
 
 Notice those `!default` flags?  That `!default` flag means the variables will be set *only* if they don't have a value already.
 
-All of the variables assigned in [Bootstrap SASS's][bootstrap sass] `_variables.scss` file have a `!default` flag.  That means we can override those variables by assigning our own values before we import Bootstrap.
+All of the variables assigned in this `_variables.scss` file have a `!default` flag.  That means we can override any of these variables by assigning our own values before we import Bootstrap.
+
+### Overriding Bootstrap default variables
 
 Let's copy Bootstrap's `_variables.scss` file and make our own custom version:
 
@@ -162,7 +168,7 @@ Now we need to reference our custom variables module from our `app.scss` file.
 @import "bootstrap/theme";
 ```
 
-Remember to import our `variables` module *before* we import Bootstrap!  If we import it afterward, our changes customizations won't be applied.
+Remember to import our `variables` module **before we import Bootstrap**!  If we import it afterward, our changes won't be applied.
 
 Now let's change `$font-size-base` to `16px` in `css/_variables.scss`:
 
