@@ -65,7 +65,7 @@ Create a `bower.json` file using `bower init` or by manually creating one:
 }
 ```
 
-Now let's install [`bootstrap-sass`][] with Bower.
+Now let's install [`bootstrap-sass`][bootstrap sass] with Bower.
 
 ```bash
 $ bower install --save bootstrap-sass
@@ -88,7 +88,7 @@ Now we can make an SCSS file that includes bootstrap into our project.  Let's ca
 
 ### Compile Bootstrap for Sass with Gulp
 
-Now let's use gulp to compile our `app.scss` which includes Bootstrap SASS:
+Now let's use gulp to compile our `app.scss` which includes Bootstrap SASS.  Create a `gulpfile.js` file which contains:
 
 ```js
 var gulp = require('gulp');
@@ -178,7 +178,7 @@ $ gulp
 
 ## Try it out!
 
-I made a sample project to demonstrate how easy it is to customize Bootstrap variables before building [Bootstrap SASS][].
+I made a sample project to demonstrate how easy it is to customize Bootstrap variables before building [Bootstrap Sass][].
 
 [Check out the sample project on Github](https://github.com/treyhunner/custom-bootstrap-example)
 
@@ -190,7 +190,7 @@ This article is also available on [Trey Hunner's blog](http://treyhunner.com/201
 
 [bootstrap]: http://getbootstrap.com/
 [bower]: http://bower.io/
-[`bootstrap-sass`]: https://github.com/twbs/bootstrap-sass
+[bootstrap sass]: https://github.com/twbs/bootstrap-sass
 [gulp]: http://gulpjs.com/
 [variables.scss]: https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss#L52
 [less]: http://lesscss.org/
