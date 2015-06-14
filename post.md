@@ -1,10 +1,10 @@
 ## Who is this for?
 
-If you have ever struggled to customize the overall look-and-feel of a [Bootstrap][]-powered website, this tutorial is for you.
+In many cases, you cannot easily customize [Bootstrap's][bootstrap] overall appearance by simply appending CSS rules after loading your `bootstrap.css` file.  For example, if you change the base font size on your page, you'll also want to change header font sizes and margins/padding for text elements like paragraph tags.
+
+If you have ever struggled to customize the overall look-and-feel of a Bootstrap-powered website, this tutorial is for you.
 
 ## Customizing Bootstrap font size and colors
-
-In many cases, you cannot easily customize Bootstrap's overall appearance by simply appending CSS rules after loading your `bootstrap.css` file.  For example, if you change the base font size on your page, you'll also want to change header font sizes and margins/padding for text elements like paragraph tags.
 
 Fundamentally changing Bootstrap is not something you can easily do without recompiling Bootstrap's CSS.
 
