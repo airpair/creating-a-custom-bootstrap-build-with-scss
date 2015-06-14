@@ -40,9 +40,9 @@ Our `package.json` file should now look something like this:
 }
 ```
 
-### Install Bootstrap for Sass
+### Install Bootstrap for Sass with Bower
 
-Now let's use Bower to install bootstrap.  This will allow us to import Bootstrap into our SCSS code and compile it down to CSS manually.
+Now let's use Bower to install Bootstrap.  This will allow us to import Bootstrap into our SCSS code and compile it down to CSS manually.
 
 Create a `bower.json` file using `bower init` or by manually creating one:
 
@@ -115,7 +115,9 @@ gulp.task('fonts', function() {
 gulp.task('default', ['css', 'fonts']);
 ```
 
-Now when we run `gulp`, our compiled Bootstrap CSS should appear in the `public/css` directory:
+In the file above, we have made three gulp tasks.  The `css` task reads our `css/app.scss` Sass file, compiles it into CSS, and stores the CSS in `public/css`.  The `fonts` task copies the Bootstrap fonts to `public/fonts`.  The `default` task executes both the `css` and `fonts` tasks.
+
+Now when we run `gulp`, the `default` task will execute and our compiled Bootstrap CSS should appear in the `public/css` directory:
 
 ```bash
 $ gulp
