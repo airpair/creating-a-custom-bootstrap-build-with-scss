@@ -42,7 +42,7 @@ Our `package.json` file should now look something like this:
 
 #### Install Bootstrap for Sass with Bower
 
-Now let's use Bower to install Bootstrap.  This will allow us to import Bootstrap into our SCSS code and compile it down to CSS manually.
+Now let's use Bower to install Bootstrap.  This will allow us to import Bootstrap into our Sass stylesheet and compile it down to CSS manually.
 
 Create a `bower.json` file using `bower init` or by manually creating one:
 
@@ -79,7 +79,7 @@ Our `bower.json` file should now have `bootstrap-sass` listed as a dependency:
 }
 ```
 
-Now we can make an SCSS file that includes bootstrap into our project.  Let's call our SCSS file `css/app.scss`:
+Now we can make a [Sassy CSS][scss] (SCSS) file that includes Bootstrap into our project with the default Bootstrap theme.  Let's call our SCSS file `css/app.scss`:
 
 ```scss
 @import "bootstrap";
@@ -199,3 +199,4 @@ This article was originally published on [Trey Hunner's blog](http://treyhunner.
 [less]: http://lesscss.org/
 [node.js]: http://nodejs.org/
 [sass]: http://sass-lang.com/
+[scss]: http://sass-lang.com/documentation/file.SASS_REFERENCE.html#syntax
