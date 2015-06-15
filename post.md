@@ -46,7 +46,7 @@ Now let's use Bower to install Bootstrap.  This will allow us to import Bootstra
 
 Create a `bower.json` file using `bower init` or by manually creating one:
 
-```json
+```javascript
 {
   "name": "custom-bootstrap-example",
   "authors": [
