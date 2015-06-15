@@ -88,7 +88,7 @@ Now we can make a [Sassy CSS][scss] (SCSS) file that includes Bootstrap into our
 
 #### Compile Bootstrap for Sass with Gulp
 
-Now let's use gulp to compile our `app.scss` which includes Bootstrap SASS.  Create a `gulpfile.js` file which contains:
+Now let's use Gulp to compile our `app.scss` which includes Bootstrap Sass.  Create a `gulpfile.js` file which contains:
 
 ```javascript
 var gulp = require('gulp');
@@ -115,7 +115,7 @@ gulp.task('fonts', function() {
 gulp.task('default', ['css', 'fonts']);
 ```
 
-In the file above, we have made three gulp tasks.  The *css* task reads `css/app.scss`, compiles it into CSS, and stores that CSS in `public/css`.  The *fonts* task copies the Bootstrap fonts to `public/fonts`.  The *default* task executes both the *css* and *fonts* tasks.
+In the file above, we have made three Gulp tasks.  The *css* task reads `css/app.scss`, compiles it into CSS, and stores that CSS in `public/css`.  The *fonts* task copies the Bootstrap fonts to `public/fonts`.  The *default* task executes both the *css* and *fonts* tasks.
 
 Now when we run `gulp`, the *default* task will execute and our compiled Bootstrap CSS should appear in the `public/css` directory:
 
@@ -133,10 +133,9 @@ Now let's look at how we can go about customizing the font size in Bootstrap.
 
 If we take a peak inside [Bootstrap Sass][], we can see that dozens of customizable variables are listed in the [`bootstrap/_variables.scss` file][variables.scss].  To change the font size, we'll want to customize the `$font-size-base` variable.
 
-The value of the `$font-size-base` variable in is used for calculating a variety of other important variables in the same file.  For example 8 of the lines below rely on `$font-size-base`:
+The value of the `$font-size-base` variable is used for calculating a variety of other important variables in the same file.  For example all of the lines below rely on `$font-size-base`:
 
 ```scss
-$font-size-base:          14px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
 
@@ -148,7 +147,7 @@ $font-size-h5:            $font-size-base !default;
 $font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
 ```
 
-Notice those `!default` flags?  That `!default` flag means the variables will be set *only* if they don't have a value already.
+Notice those `!default` flags?  That `!default` flag means the variables will be set *only* if they don't already have a value.
 
 All of the variables assigned in this `_variables.scss` file have a `!default` flag.  That means we can override any of these variables by assigning our own values before we import Bootstrap.
 
@@ -157,7 +156,7 @@ All of the variables assigned in this `_variables.scss` file have a `!default` f
 Let's copy Bootstrap's `_variables.scss` file and make our own custom version:
 
 ```bash
-$ cp bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss css/_variables.scss
+$ cp bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss css/
 ```
 
 Now we need to reference our custom variables module from our `app.scss` file.
@@ -176,7 +175,7 @@ Now let's change `$font-size-base` to `16px` in `css/_variables.scss`:
 $font-size-base:          16px;
 ```
 
-Now if we recompile our CSS we should see our larger font size reflected throughout our application:
+If we recompile our CSS we should see a larger font size everywhere our application:
 
 ```bash
 $ gulp
