@@ -10,9 +10,9 @@ Customizing fonts and colors is particularly difficult with Bootstrap.  If you c
 
 Fundamentally changing Bootstrap is not easy without recompiling Bootstrap's CSS.
 
-What do I mean by recompiling?  Well, Bootstrap is built using a CSS preprocessor.  There are dozens of variables that control Bootstrap appearance.  A change in one of these variables can propagate throughout our website, affecting many different styles as appropriate.
+What do I mean by recompiling?  Well, Bootstrap is built using a CSS preprocessor.  There are dozens of variables that control Bootstrap's appearance.  A change in one of these variables can propagate throughout your website, affecting many different styles as appropriate.
 
-The official version of Bootstrap is maintained using the [LESS][] CSS preprocessor, but we're going to use the [Sass][] version due to Sass's popularity.
+The official version of Bootstrap is maintained using the [LESS][] CSS preprocessor, but we're going to use the [Sass][] version of Bootstrap due to Sass's popularity.
 
 ## Build Bootstrap with Sass, Gulp, and Bower
 
